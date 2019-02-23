@@ -1,26 +1,40 @@
 package edu.ap.be.rubenM;
 
-public class ArrayLIFOQueue implements LIFOQueue{
-
-    @Override
-    public void isEmpty() {
-
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.List;
+public class ArrayLIFOQueue<o> implements LIFOQueue<o>{
+    private ArrayDeque<o> array;
+    
+    public ArrayLIFOQueue(o[] array) {
+        List<o> list = Arrays.asList(array);
+        ArrayDeque<o> ad = new ArrayDeque<>(list);
+        this.array = ad;
     }
 
     @Override
-    public void push() {
-
+    public boolean isEmpty() {
+        return array.isEmpty();
     }
 
     @Override
-    public void pop() {
-
+    public void push(O e) {
+        array.addFirst(e);
     }
 
     @Override
-    public void peek() {
-
+    public O pop() {
+        return array.pollFirst();
     }
 
+    @Override
+    public O peek() {
+        return array.peek();
+    }
+
+	
+
+
+    
     
 }

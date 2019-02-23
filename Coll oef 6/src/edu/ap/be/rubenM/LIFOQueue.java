@@ -1,13 +1,14 @@
 package edu.ap.be.rubenM;
 
+
 /**
  * LIFOQueue
  */
-public interface LIFOQueue {
+public interface LIFOQueue<A>  {
 
-    public void isEmpty();
-    public void push();
-    public void pop();
-    public void peek();
-    
+    public boolean isEmpty();
+    public void push(A e);
+    public A pop();
+    public A peek();
+
 }
